@@ -12,10 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BlocksComponent } from './blocks/blocks.component';
 import { BlockService } from './blocks/blocks.service';
 import { BlockSaveComponent } from './block-save/block-save.component';
+import { BlockSaveService } from './block-save/block-save.service';
 
 const appRoutes: Routes = [
     { path: 'district', component: DistrictSaveComponent },
-    { path: 'block', component: BlocksComponent }
+    { path: 'block', component: BlockSaveComponent }
  ];
 
 @NgModule({
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
   providers: [
       DistrictService,
       DistrictSaveService,
-      BlockService
+      BlockService,
+      BlockSaveService
   ],
   bootstrap: [AppComponent]
 })

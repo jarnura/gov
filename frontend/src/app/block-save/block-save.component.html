@@ -1,3 +1,13 @@
 <p>
   block-save works!
 </p>
+
+<app-blocks (add) = "onCreate($event)" ></app-blocks>
+
+
+<div *ngFor = 'let block of blocks'>
+    <ul>
+        <li>{{block.id}}</li>
+        <li>{{block.block_name}}</li>
+    </ul>
+</div>

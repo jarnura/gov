@@ -1,0 +1,13 @@
+<p>
+  district-save works!
+</p>
+
+<app-districts (add) = "onCreate($event)" ></app-districts>
+
+
+<div *ngFor = 'let district of districts'>
+    <ul>
+        <li>{{district.id}}</li>
+        <li>{{district.district_name}}</li>
+    </ul>
+</div>

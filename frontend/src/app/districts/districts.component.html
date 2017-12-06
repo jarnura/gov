@@ -1,0 +1,18 @@
+<p>
+  districts works!
+</p>
+
+<div class = "container">
+
+        <h1>district Form</h1>
+        <form>
+           
+           <div class = "form-group">
+              <label for = "district_name">district_name</label>
+              <input type = "string" class = "form-control" id = "district_name"
+                 [(ngModel)] = "newdata.district_name" name = "district_name">
+                 {{newdata.district_name}}
+           </div>
+        </form>
+        <button class='btn btn-primary' (click) = "adddata()">add</button>
+     </div>

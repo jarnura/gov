@@ -4,20 +4,19 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
-import { Block } from './blocks';
+import { Village } from '../villages/villages';
 
 @Injectable()
-export class BlockService {
+export class VillageSaveService {
    private databaseUrl='http://35.193.44.255:3000';
 
    constructor(private _http: Http){}
    
-   getBlocks(): Observable<Block[]> {
-      return this._http.get(this.databaseUrl + '/blocks.json')
-      .map((response) => {
-          const datas =  response.json();
-          return datas.map((data) => new Block(data));
-      })
+   createvillage(data: Village): Observable<Village> { 
+       return this._http.post(this.databaseUrl + '/villages.json', data) 
+       .map((response) =>{ 
+           return new Village(response.json()); 
+       })
    }
    
 }

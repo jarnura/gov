@@ -1,0 +1,6 @@
+      invoke  active_record
+      remove    db/migrate/20171206155554_create_villages.rb
+      remove    app/models/village.rb
+      invoke    test_unit
+      remove      test/models/village_test.rb
+      remove      test/fixtures/villages.yml

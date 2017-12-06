@@ -13,10 +13,15 @@ import { BlocksComponent } from './blocks/blocks.component';
 import { BlockService } from './blocks/blocks.service';
 import { BlockSaveComponent } from './block-save/block-save.component';
 import { BlockSaveService } from './block-save/block-save.service';
+import { VillagesComponent } from './villages/villages.component';
+import { VillageService } from './villages/villages.service';
+import { VillageSaveComponent } from './village-save/village-save.component';
+import { VillageSaveService } from './village-save/village-save.service';
 
 const appRoutes: Routes = [
     { path: 'district', component: DistrictSaveComponent },
-    { path: 'block', component: BlockSaveComponent }
+    { path: 'block', component: BlockSaveComponent },
+    { path: 'village', component: VillageSaveComponent }
  ];
 
 @NgModule({
@@ -25,7 +30,9 @@ const appRoutes: Routes = [
     DistrictsComponent,
     DistrictSaveComponent,
     BlocksComponent,
-    BlockSaveComponent
+    BlockSaveComponent,
+    VillagesComponent,
+    VillageSaveComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,9 @@ const appRoutes: Routes = [
       DistrictService,
       DistrictSaveService,
       BlockService,
-      BlockSaveService
+      BlockSaveService,
+      VillageService,
+      VillageSaveService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,13 @@
+<p>
+  village-save works!
+</p>
+
+<app-villages (add) = "onCreate($event)" ></app-villages>
+
+
+<div *ngFor = 'let village of villages'>
+    <ul>
+        <li>{{village.id}}</li>
+        <li>{{village.village_name}}</li>
+    </ul>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  village_name: MyString
+  district_id: 
+  block_id: 
+
+two:
+  village_name: MyString
+  district_id: 
+  block_id: 

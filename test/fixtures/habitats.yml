@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  habitat_name: MyString
+  district_id: 
+  block_id: 
+  village_id: 
+
+two:
+  habitat_name: MyString
+  district_id: 
+  block_id: 
+  village_id: 

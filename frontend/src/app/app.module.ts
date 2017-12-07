@@ -17,11 +17,16 @@ import { VillagesComponent } from './villages/villages.component';
 import { VillageService } from './villages/villages.service';
 import { VillageSaveComponent } from './village-save/village-save.component';
 import { VillageSaveService } from './village-save/village-save.service';
+import { HabitatsComponent } from './habitats/habitats.component';
+import { HabitatService } from './habitats/habitats.service';
+import { HabitatSaveComponent } from './habitat-save/habitat-save.component';
+import { HabitatSaveService } from './habitat-save/habitat-save.service';
 
 const appRoutes: Routes = [
     { path: 'district', component: DistrictSaveComponent },
     { path: 'block', component: BlockSaveComponent },
-    { path: 'village', component: VillageSaveComponent }
+    { path: 'village', component: VillageSaveComponent },
+    { path: 'habitat', component: HabitatSaveComponent }
  ];
 
 @NgModule({
@@ -32,7 +37,9 @@ const appRoutes: Routes = [
     BlocksComponent,
     BlockSaveComponent,
     VillagesComponent,
-    VillageSaveComponent
+    VillageSaveComponent,
+    HabitatsComponent,
+    HabitatSaveComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,9 @@ const appRoutes: Routes = [
       BlockService,
       BlockSaveService,
       VillageService,
-      VillageSaveService
+      VillageSaveService,
+      HabitatService,
+      HabitatSaveService
   ],
   bootstrap: [AppComponent]
 })

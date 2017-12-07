@@ -1,0 +1,13 @@
+<p>
+  habitat-save works!
+</p>
+
+<app-habitats (add) = "onCreate($event)" ></app-habitats>
+
+
+<div *ngFor = 'let habitat of habitats'>
+    <ul>
+        <li>{{habitat.id}}</li>
+        <li>{{habitat.habitat_name}}</li>
+    </ul>
+</div>

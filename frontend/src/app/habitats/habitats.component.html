@@ -1,0 +1,29 @@
+<p>
+  habitats works!
+</p>
+
+<div class = "container">
+
+        <h1>block Form</h1>
+        <select [(ngModel)]="newdata.district_id" (change)="getblocks()">
+                <option *ngFor="let district of districts" [ngValue]="district.id" >{{district.district_name}}</option>
+            </select>
+        <select [(ngModel)]="newdata.block_id" (change)="getvillages()">
+                <option *ngFor="let block of blocks" [ngValue]="block.id" >{{block.block_name}}</option>
+            </select>
+            
+            <select [(ngModel)]="newdata.village_id">
+                <option *ngFor="let village of villages" [ngValue]="village.id" >{{village.village_name}}</option>
+            </select>
+            
+        <form>
+           
+           <div class = "form-group">
+              <label for = "habitat_name">habitat_name</label>
+              <input type = "string" class = "form-control" id = "habitat_name"
+                 [(ngModel)] = "newdata.habitat_name" name = "habitat_name">
+                 {{newdata.habitat_name}}
+           </div>
+        </form>
+        <button class='btn btn-primary' (click) = "adddata()">add</button>
+     </div>

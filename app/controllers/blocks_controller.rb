@@ -46,6 +46,15 @@ class BlocksController < ApplicationController
         end
     end
     
+    def loadvillages
+        @block = Block.find(params[:id])
+        @villages = @block.villages
+        
+        respond_to do |wants|
+            wants.json { render :json => @villages }
+        end
+    end
+    
     def block_params
         params.require(:block).permit(:block_name, :district_id)
     end

@@ -6,6 +6,7 @@ import { Village } from '../villages/villages';
 import { Habitat } from './habitats';
 import { HabitatService } from './habitats.service';
 import { District } from '../districts/districts';
+import { VillageService } from '../villages/villages.service';
 
 @Component({
   selector: 'app-habitats',
@@ -17,6 +18,7 @@ export class HabitatsComponent implements OnInit {
   constructor(
       private _router: Router,
       private _districtService: DistrictService,
+      private _villageService: VillageService,
       private _dataService: HabitatService
     ){}
     
@@ -41,27 +43,12 @@ export class HabitatsComponent implements OnInit {
     
     getblocks() {
       console.log(this.newdata.district_id);
-      this._dataService.getBlocks(this.newdata.district_id).subscribe(blocks => {this.blocks = blocks});
+      this._villageService.getBlocks(this.newdata.district_id).subscribe(blocks => {this.blocks = blocks});
     }
     
     getvillages() {
       console.log(this.newdata.block_id);
       this._dataService.getVillages(this.newdata.block_id).subscribe(villages => {this.villages = villages});
     }
-
-}
-
-
-  
-      
-    
-    
-     
-
-    
-        
-  
-  
-  
 
 }

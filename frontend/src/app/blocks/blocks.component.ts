@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DistrictService } from '../districts/districts.service';
 import { Block } from './blocks';
+import { District } from '../districts/districts';
 
 @Component({
   selector: 'app-blocks',

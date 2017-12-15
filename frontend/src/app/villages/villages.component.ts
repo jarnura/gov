@@ -4,6 +4,7 @@ import { DistrictService } from '../districts/districts.service';
 import { Block } from '../blocks/blocks';
 import { VillageService } from './villages.service';
 import { Village } from './villages';
+import { District } from '../districts/districts';
 
 @Component({
   selector: 'app-villages',

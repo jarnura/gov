@@ -21,12 +21,23 @@ import { HabitatsComponent } from './habitats/habitats.component';
 import { HabitatService } from './habitats/habitats.service';
 import { HabitatSaveComponent } from './habitat-save/habitat-save.component';
 import { HabitatSaveService } from './habitat-save/habitat-save.service';
+import { PlansComponent } from './plans/plans.component';
+import { PlanService } from './plans/plans.service';
+import { PlanSaveComponent } from './plan-save/plan-save.component';
+import { PlanSaveService } from './plan-save/plan-save.service';
+import { HomeComponent } from './home/home.component';
+import { HomeService } from './home/home.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LikeDislikeComponent } from './home/like_dislike.component';
 
 const appRoutes: Routes = [
     { path: 'district', component: DistrictSaveComponent },
     { path: 'block', component: BlockSaveComponent },
     { path: 'village', component: VillageSaveComponent },
-    { path: 'habitat', component: HabitatSaveComponent }
+    { path: 'habitat', component: HabitatSaveComponent },
+    { path: 'plan', component: PlanSaveComponent },
+    { path: 'home', component: HomeComponent },
+    { path: 'app', component: AppComponent }
  ];
 
 @NgModule({
@@ -39,14 +50,19 @@ const appRoutes: Routes = [
     VillagesComponent,
     VillageSaveComponent,
     HabitatsComponent,
-    HabitatSaveComponent
+    HabitatSaveComponent,
+    PlansComponent,
+    PlanSaveComponent,
+    HomeComponent,
+    LikeDislikeComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot()
   ],
   providers: [
       DistrictService,
@@ -56,8 +72,11 @@ const appRoutes: Routes = [
       VillageService,
       VillageSaveService,
       HabitatService,
-      HabitatSaveService
+      HabitatSaveService,
+      PlanService,
+      PlanSaveService,
+      HomeService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }

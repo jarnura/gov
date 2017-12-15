@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171207045135) do
+ActiveRecord::Schema.define(version: 20171208063123) do
 
   create_table "blocks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "block_name"
@@ -30,6 +30,21 @@ ActiveRecord::Schema.define(version: 20171207045135) do
     t.bigint "district_id"
     t.bigint "block_id"
     t.bigint "village_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "plan_title", null: false
+    t.string "plan_description"
+    t.boolean "status", default: true, null: false
+    t.integer "issue_level"
+    t.boolean "issue_status", default: false, null: false
+    t.bigint "habitat_id", null: false
+    t.integer "progress_count_positive", default: 0, null: false
+    t.integer "issue_prog_count_positive", default: 0, null: false
+    t.integer "issue_prog_count_negative", default: 0, null: false
+    t.integer "progress_count_negative", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

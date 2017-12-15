@@ -1,0 +1,50 @@
+<p>
+  home works!
+</p>
+<div [hidden]='true'>
+    <app-root></app-root>
+</div>
+<div class = "container">
+
+        <select [(ngModel)]="district_id" (change)="getblocks()">
+                <option *ngFor="let district of districts" [ngValue]="district.id" >{{district.district_name}}</option>
+        </select>
+        
+        <select [(ngModel)]="block_id" (change)="getvillages()">
+                <option *ngFor="let block of blocks" [ngValue]="block.id" >{{block.block_name}}</option>
+        </select>
+            
+        <select [(ngModel)]="village_id" (change)="gethabitats()">
+                <option *ngFor="let village of villages" [ngValue]="village.id" >{{village.village_name}}</option>
+        </select>
+            
+        <select [(ngModel)]="habitat_id">
+                <option *ngFor="let habitat of habitats" [ngValue]="habitat.id" >{{habitat.habitat_name}}</option>
+        </select>
+            
+        <button class='btn btn-primary' (click) = "getplans()">Plans</button>
+    
+    <ngb-accordion>
+        
+        
+        <ngb-panel *ngFor="let plan of plans" [id]="plan.id">
+            <ng-template ngbPanelTitle>
+
+                        <span>{{plan.plan_title}}</span>
+
+            </ng-template>
+            <ng-template ngbPanelContent>
+                    <span>
+                        {{plan.plan_description}}
+                    </span>
+                    <span>
+                       hi:- {{plan.progress_count_positive}}
+                    </span>
+                    <like-dislike [like]="plan.progress_count_positive" [plan]="plan" (plandata)="setLikes($event)" (likesChanges)="onLike($event)" >Like</like-dislike>
+                    {{plan.progress_count_positive}}
+            </ng-template>
+        </ngb-panel>
+        
+    </ngb-accordion>
+    
+    </div>

@@ -1,0 +1,46 @@
+<p>
+  plans works!
+</p>
+<div class = "container">
+
+        <h1>plan Form</h1>
+        <select [(ngModel)]="district_id" (change)="getblocks()">
+                <option *ngFor="let district of districts" [ngValue]="district.id" >{{district.district_name}}</option>
+            </select>
+        <select [(ngModel)]="block_id" (change)="getvillages()">
+                <option *ngFor="let block of blocks" [ngValue]="block.id" >{{block.block_name}}</option>
+            </select>
+            
+            <select [(ngModel)]="village_id" (change)="gethabitats()">
+                <option *ngFor="let village of villages" [ngValue]="village.id" >{{village.village_name}}</option>
+            </select>
+            
+            <select [(ngModel)]="newdata.habitat_id">
+                <option *ngFor="let habitat of habitats" [ngValue]="habitat.id" >{{habitat.habitat_name}}</option>
+            </select>
+            
+        <form>
+           
+           <div class = "form-group">
+              <label for = "plan_title">title</label>
+              <input type = "string" class = "form-control" id = "plan_title"
+                 [(ngModel)] = "newdata.plan_title" name = "plan_title">
+                 {{newdata.plan_title}}
+           </div>
+           
+           <div class = "form-group">
+              <label for = "plan_description">Description</label>
+                 <textarea type="string" class = "form-control" id = "plan_description"
+                 [(ngModel)] = "newdata.plan_description" name="plan_description"></textarea>
+                 {{newdata.plan_description}}
+           </div>
+           
+           <div class = "form-group">
+              <label for = "issue_level">issue_level</label>
+              <input type = "number" class = "form-control" id = "issue_level"
+                 [(ngModel)] = "newdata.issue_level" name = "issue_level">
+                 {{newdata.issue_level}}
+           </div>
+        </form>
+        <button class='btn btn-primary' (click) = "adddata()">add</button>
+     </div>

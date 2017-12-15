@@ -1,0 +1,13 @@
+<p>
+  plan-save works!
+</p>
+
+<app-plans (add) = "onCreate($event)" ></app-plans>
+
+<div *ngFor = 'let plan of plans'>
+    <ul>
+        <li>{{plan.id}}</li>
+        <li>{{plan.plan_title}}</li>
+        <li>{{plan.plan_description}}</li>
+    </ul>
+</div>

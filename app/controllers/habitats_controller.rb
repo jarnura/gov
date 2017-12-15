@@ -46,6 +46,15 @@ class HabitatsController < ApplicationController
         end
     end
     
+    def loadplans
+        @habitat = Habitat.find(params[:id])
+        @plans = @habitat.plans
+        
+        respond_to do |wants|
+            wants.json { render :json => @plans }
+        end
+    end
+    
     def habitat_params
        params.require(:habitat).permit(:habitat_name, :district_id, :block_id, :village_id) 
     end
